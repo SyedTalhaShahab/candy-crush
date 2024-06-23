@@ -12,9 +12,7 @@ elapsed_seconds = time.time()
 
 pygame.init()
 
-ROWS, COLUMNS = 9, 9
-CANDY_SIZE = 70
-FPS = 30
+
 
 WHITE = (255, 255, 255)
 
@@ -23,8 +21,18 @@ root = Tk()
 M_WIDTH = root.winfo_vrootwidth()
 M_HEIGHT = root.winfo_screenheight()
 
-M_WIDTH = M_WIDTH * (0.42)
+M_WIDTH = M_WIDTH * (0.9)
 M_HEIGHT = M_HEIGHT * (0.82)
+
+CANDY_SIZE = 60
+
+
+ROWS, COLUMNS = (round(M_HEIGHT/CANDY_SIZE) -1), round(M_WIDTH/CANDY_SIZE -1)
+
+print(ROWS)
+print(COLUMNS)
+
+FPS = 60
 
 screen = pygame.display.set_mode((M_WIDTH, M_HEIGHT))
 pygame.display.set_caption("Candy Crush")
